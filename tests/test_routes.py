@@ -125,7 +125,7 @@ class TestAccountService(TestCase):
 
     # ADD YOUR TEST CASES HERE ...
 
-    # Read an account    
+    # Read an account
     def test_read_account(self):
         """It should Read a single Account"""
         account = self._create_accounts(1)[0]
@@ -135,7 +135,7 @@ class TestAccountService(TestCase):
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         data = resp.get_json()
         self.assertEqual(data["name"], account.name)
-    
+
     # Read an account - not found
     def test_read_account_not_found(self):
         """It should not Read an Account that is not found"""
@@ -150,7 +150,7 @@ class TestAccountService(TestCase):
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         data = resp.get_json()
         self.assertEqual(len(data), 5)
-    
+
     # Update accounts
     def test_update_account(self):
         """It should Update an existing Account"""
